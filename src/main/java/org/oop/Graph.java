@@ -25,24 +25,40 @@ public class Graph {
         this.y = y;
     }
 
-    public static double distance(Graph from, Graph to) {
-        double xDistance = getxDistance(from, to);
-        double yDistance = getyDistance(from, to);
+    public double distanceTo(Graph to) {
+        double xDistance = this.x-to.x;
+        double yDistance = this.y-to.y;
         return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
     }
-
-
-    public static double direction(Graph from, Graph to) {
-        double xDistance = getxDistance(to, from);
-        double yDistance = getyDistance(from, to);
-        return Math.atan2(yDistance, xDistance);
+    public double angleBetween(Graph to){
+        double xDistance=this.x-to.x;
+        double yDistance=this.y-to.y;
+        return Math.atan2(yDistance,xDistance);
     }
 
-    private static double getyDistance(Graph from, Graph to) {
-        return to.getY() - from.getY();
-    }
 
-    private static double getxDistance(Graph from, Graph to) {
-        return from.getX() - to.getX();
-    }
+
 }
+
+
+// class Graph{
+//x,y
+//
+//        distanceTo (Graph g)
+//        { this.x - g.x
+//        this.y - g.y
+//        }
+//
+//
+//        static
+//}
+//
+//instance = new Graph(1,2)
+//instance2 = new Graph(3,4)
+//
+//
+//
+//
+//instance1.distanceto(instance2)
+
+
